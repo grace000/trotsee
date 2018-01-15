@@ -7,7 +7,7 @@ const app = express();
 // routes(app); //register the route
 
 // Serve static files from the React app
-// app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, '../client'));
