@@ -1,0 +1,20 @@
+{
+  "name": "trotseeapp",
+  "version": "2.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jade": "^1.11.0",
+    "mongoose": "^4.13.5",
+    "pug": "^2.0.0-rc.4",
+    "react": "^16.1.0"
+  },
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
