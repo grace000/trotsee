@@ -9,11 +9,11 @@ const app = express();
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, '../client'));
-app.use(express.static(path.join(__dirname, '../client')));
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
+// app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, '../client'));
+// app.use(express.static(path.join(__dirname, '../client')));
+// app.use(bodyParser.json({limit: '50mb'}));
+// app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
 
 // const config = require('./config');
 
@@ -39,9 +39,9 @@ mongoose.connection.openUri(uristring, function (err, res) {
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'../client/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname+'../client/build/index.html'));
+// });
 
 app.get('/', function(req, res){
   res.render('index')
@@ -49,7 +49,8 @@ app.get('/', function(req, res){
 
 app.get('/api/newapp', function(req, res){
 	const hello = "good morning";
-  res.json('hello sir taller')
+  res.json(hello);
+  console.log('get hello server');
 });
 
 
