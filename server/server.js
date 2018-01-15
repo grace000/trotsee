@@ -50,7 +50,7 @@ app.get('/', function(req, res){
 app.get('/api/newapp', function(req, res){
 	const hello = "good morning";
   res.json(hello);
-  console.log('get hello server');
+  console.log('get hello servers');
 });
 
 
