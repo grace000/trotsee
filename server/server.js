@@ -45,7 +45,7 @@ mongoose.connection.openUri(uristring, function (err, res) {
 
 app.get('/api/newapp', function(req, res){
 	const hello = "good morning";
-  res.json('hello')
+  res.json('hello sir taller')
 });
 
 
