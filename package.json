@@ -12,9 +12,9 @@
     "react": "^16.1.0"
   },
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "devDependencies": {
-    "nodemon": "^1.14.11"
+    "node": "^9.4.0"
   }
 }
