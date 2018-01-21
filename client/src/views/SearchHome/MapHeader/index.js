@@ -32,7 +32,7 @@ const Style = {
     return (
       
         <div style={Style}>
-        	<iframe src={this.name} allowfullscreen style={{width:'100%', height:'26vw', frameBorder:'0', border:'0', paddingBottom:'1em'}}></iframe>
+        	<iframe src={this.name} allowFullScreen style={{width:'100%', height:'26vw', frameBorder:'0', border:'0', paddingBottom:'1em'}}></iframe>
         </div>
      
       

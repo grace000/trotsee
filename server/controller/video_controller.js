@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
 
-Video = mongoose.model('Video');
+Video = mongoose.model('videos');
 
 // Video -------------------------------------------------------
 

@@ -10,13 +10,15 @@ const VideoSchema = new Schema ({
 		type: String
 	},
 	categories: {
-    	gayborhood: String,
-    	restaurants: String,
-    	sightseeing: String,
-    	events: String,
-    	nightlife: String,
-    	museum: String,
-    	festival: String
+    	gayborhood: Boolean,
+    	restaurants: Boolean,
+    	sightseeing: Boolean,
+    	events: Boolean,
+    	nightlife: Boolean,
+    	museum: Boolean,
+    	festival: Boolean,
+    	sports: Boolean,
+    	shopping: Boolean
     }, 
 	location: {
 		type: String
@@ -31,5 +33,5 @@ const VideoSchema = new Schema ({
   	date : Date
 });
 
-const Video = mongoose.model("Video", VideoSchema);
+const Video = mongoose.model("videos", VideoSchema);
 module.exports = Video;
