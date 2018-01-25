@@ -1,63 +1,42 @@
-import { Button, Grid, Header, Icon, Menu, Sticky } from 'semantic-ui-react'
 import React, { Component } from 'react'
+import 'semantic-ui-css/semantic.min.css'
+import styled from 'styled-components'
+import {
+  Icon,
+  Menu
+} from 'semantic-ui-react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
-
-
-const GridStyle = {
-	width:'100%',
-	float: 'right',
-	marginRight:'0',
-	paddingTop:'1em'
-	
-}
-
-const HeaderStyle = {
-	width: '100%',
-	float:'right',
-	height:'15em'
-}
-
-
- export default class MainHeader extends Component {
-  state = {}
+export default class MainHeader extends Component {
+  state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   render() {
     const { activeItem } = this.state
+
     return (
-      <Sticky>
-       <Menu stackable inverted>
-        <Menu.Item>
-          <img src='/logo.png' />
-        </Menu.Item>
-
-        <Menu.Item
-          name='features'
-          active={activeItem === 'features'}
-          onClick={this.handleItemClick}
-        >
-          Features
-        </Menu.Item>
-
-        <Menu.Item
-          name='testimonials'
-          active={activeItem === 'testimonials'}
-          onClick={this.handleItemClick}
-        >
-          Testimonials
-        </Menu.Item>
-
-        <Menu.Item
-          name='sign-in'
-          active={activeItem === 'sign-in'}
-          onClick={this.handleItemClick}
-        >
-          Sign-in
-        </Menu.Item>
-      </Menu>
-      </Sticky>
-    );
+      <div>
+        <Menu pointing secondary>
+          <Menu.Item name='home' 
+              active={activeItem === 'home'} 
+              onClick={this.handleItemClick} 
+              as={ Link } 
+              to='/'/>
+          <Menu.Menu position='right'>
+            <Menu.Item name='login' 
+              active={activeItem === 'login'} 
+              onClick={this.handleItemClick} 
+              as={ Link } 
+              to='/login'/>
+            <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick} />
+          </Menu.Menu>
+        </Menu>
+      </div>
+    )
   }
-};
-
-
+}

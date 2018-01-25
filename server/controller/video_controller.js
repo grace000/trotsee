@@ -13,14 +13,15 @@ exports.list_all_videos = function(req, res) {
   });
 };
 
+
 exports.create_video = function(req, res) {
   var new_video = new Video(req.body);
   new_video.save(function(err, video) {
     if (err) {
       res.send(err);
     }
-
     res.json(video);
+    // res.send('Video successfully added!')
   });
 };
 

@@ -7,21 +7,30 @@ import {
   Grid,
 } from 'semantic-ui-react'
 import MainHeader from './MainHeader'
-import LeftPanel from './LeftPanel'
+import VideoPanel from './VideoPanel'
+import MapPanel from '../SearchHome/MapPanel'
 import Footer from './Footer'
 
 const { Column, Row } = Grid
 
-const Style = {
-	backgroundColor:'#FAFAFA'
-}
 
 export default class Layout extends Component{
 	render(){
 		return(
 			<div>
-	        	<Row style={Style}>
-	      			<LeftPanel />
+	        	<Row>
+
+	        		<MainHeader />
+
+        			<Grid columns={2} padded>
+				      <Grid.Column>
+				        <VideoPanel />
+				      </Grid.Column>
+				      <Grid.Column>
+				        <MapPanel />
+				      </Grid.Column>
+				    </Grid>
+	        	
 	        	</Row>
         	</div>
 

@@ -19,10 +19,12 @@ const HeaderStyle = {
 
 const Style = {
   zIndex: '10',
-
+  position:'relative',
+  overflow:'hidden',
+  
 }
 
- export default class MapHeader extends Component {
+ export default class MapPanel extends Component {
 
   constructor(){
   	super();
@@ -32,7 +34,7 @@ const Style = {
     return (
       
         <div style={Style}>
-        	<iframe src={this.name} allowFullScreen style={{width:'100%', height:'26vw', frameBorder:'0', border:'0', paddingBottom:'1em'}}></iframe>
+        	<iframe src={this.name} allowFullScreen style={{width:'100%', height:'60vw', frameBorder:'0', border:'0', paddingBottom:'1em'}}></iframe>
         </div>
      
       

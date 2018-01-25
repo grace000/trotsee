@@ -10,7 +10,7 @@ import Layout from'../src/views/Layout'
 import UserSave from "../src/views/UserSave"
 import UserPost from "../src/views/UserPost"
 import ActiveSearch from "../src/views/ActiveSearch"
-import LeftPanel from'../src/views/Layout/LeftPanel'
+
 
 const renderHomepage       = () => <Homepage />
 const renderProfile        = () => <Profile />
@@ -19,7 +19,7 @@ const renderLogin          = () => <Login />
 const renderUserSave     = () => <UserSave />
 const renderUserPost     = () => <UserPost />
 const renderActiveSearch   = () => <ActiveSearch />
-const renderLeftPanel   = () => <LeftPanel />
+
 
 const App = () => (
   <Router>
@@ -32,6 +32,8 @@ const App = () => (
 
         <Route exact path="/profile"               render={renderProfile } />
         <Route exact path="/login"                 render={renderLogin } />
+        <Route exact path="/activesearch"        render={renderActiveSearch} />
+
         <Redirect path="/" />
 
         
@@ -41,7 +43,7 @@ const App = () => (
               <Route exact path="/searchhome"            render={renderSearchHome} />
               <Route exact path="/usersave"          render={renderUserSave} />
               <Route exact path="/userpost"          render={renderUserPost} />
-              <Route exact path="/activesearch"        render={renderActiveSearch} />
+              
             </Route>
              
           

@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom'
 const querystring = require('querystring');
 
 export default class AddVideo extends React.Component {
-	constructor() {
-    super();
+	constructor(props) {
+    super(props);
 	this.state = {
 	        title: '',
 	        author: '',
@@ -14,7 +14,6 @@ export default class AddVideo extends React.Component {
 	      }
 	      this.handleTextChange = this.handleTextChange.bind(this);
 	      this.insertNewVideo = this.insertNewVideo.bind(this);
-	      this.onClick = this.onClick.bind(this);
 	      this.onSubmit = this.onSubmit.bind(this);
 	    }
 	// openModal() {
@@ -37,11 +36,8 @@ export default class AddVideo extends React.Component {
 			author: []
 		})
 		this.insertNewVideo(this);
-		console.log(this.state);
-	}
-	onClick(e) {
-	      this.insertNewVideo(this);
-	    }
+		}
+
 	insertNewVideo(e) {
 	      axios.post('/videos',
 	        querystring.stringify({
@@ -53,10 +49,11 @@ export default class AddVideo extends React.Component {
 	          }
 	        }).then(function(response) {
 	        e.setState({
-	          messageFromServer: response.data
+	          messageFromServer: response.data,
 	        });
 	      });
 	    }
+
 	handleTextChange(e) {
 	      if (e.target.name === "author") {
 	        this.setState({
@@ -68,8 +65,10 @@ export default class AddVideo extends React.Component {
 	          title: e.target.value
 	        });
 	      }
-	     console.log(this);
 	    }
+
+
+
 	render() {
 	   
 	      return (
@@ -79,29 +78,29 @@ export default class AddVideo extends React.Component {
 	          	trigger={<Button color="green" size="small"><Icon name="plus"/></Button>}
 	            closeIcon>
 			
-			<Modal.Content>
-				<Form onSubmit={this.onSubmit}>
-				    <Form.Field>
-				      <label>Title</label>
-				      <Input placeholder='Title' 
-				      		 type='text' 
-				      		 id='title' 
-				      		 name='title'
-				      		 value={this.state.title}
-				      		 onChange={this.handleTextChange}  />
-				    </Form.Field>
-				    <Form.Field>
-				      <label>Author</label>
-				      <Input placeholder='Author'
-				      		 type='text' 
-				      		 id='author'
-				      		 name='author' 
-				      		 value={this.state.author}
-				      		 onChange={this.handleTextChange} />
-				    </Form.Field>
-				    <Button type='submit' value='Submit' onSubmit={this.onClick}>Submit</Button>
-				</Form>
-			</Modal.Content>
+				<Modal.Content>
+					<Form onSubmit={this.onSubmit}>
+					    <Form.Field>
+					      <label>Title</label>
+					      <Input placeholder='Title' 
+					      		 type='text' 
+					      		 id='title' 
+					      		 name='title'
+					      		 value={this.state.title}
+					      		 onChange={this.handleTextChange}  />
+					    </Form.Field>
+					    <Form.Field>
+					      <label>Author</label>
+					      <Input placeholder='Author'
+					      		 type='text' 
+					      		 id='author'
+					      		 name='author' 
+					      		 value={this.state.author}
+					      		 onChange={this.handleTextChange} />
+					    </Form.Field>
+					    <Button type='submit' value='Submit'>Submit</Button>
+					</Form>
+				</Modal.Content>
 	    	
 	    	</Modal>
 	    	

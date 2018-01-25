@@ -1,4 +1,4 @@
-import { Button, Grid, Header, Icon, Image, Card, Embed, Input } from 'semantic-ui-react'
+import { Button, Grid, Card, Embed, Header, Input, Container } from 'semantic-ui-react'
 import React, { Component } from 'react'
 import SearchHome from '../SearchHome'
 import axios from 'axios'
@@ -18,7 +18,7 @@ export default class UserSave extends Component {
 
 	constructor() {
     		super();
-  		this.state = {data:[], history:[]};
+  		this.state = {data:{title:[]}, history:[]};
     	this.runVideoQuery = this.runVideoQuery.bind(this);
   	}
 	
@@ -28,30 +28,51 @@ export default class UserSave extends Component {
     .then(function(response) {
       console.log(response);
       if (response !== this.state.history) {
-        console.log("History", response.data);
+        console.log("History bruh", response.data);
         this.setState({ history: response.data });
 	    }
 	  }.bind(this));
 	}
+
+	componentDidMount(){
+      axios.get('/videos')
+      .then(response => {
+        this.setState({ videos: response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    }
 	
-	runVideoQuery(){
+	runVideoQuery(ev){
 		return axios.get("/videos")
       	.then(function(response) {
-      		this.setState({data:response.data});
+      		ev.setState({data:response.data});
         	console.log('video query ran');
       });
   	}
- 
-  	 //  	componentWillReceiveProps(nextProps) {
- //    	console.log('props received');
- //  	}
+
+
+
   render() {
+
+  	
+
     return (
     	<div>
     	
 	    	<AddVideo />
 
+
 	    	<Grid style={GridStyle}>
+
+
+	    	<Grid.Row>
+	    	<Container text>
+	    	<p content={this.state.data}></p>
+	    	</Container>
+
+	    	</Grid.Row>
 
 
 	    	<Grid.Row style={{padding:'0 1em', display:'block', width:'100%'}}>
@@ -72,17 +93,18 @@ export default class UserSave extends Component {
 	  		</Grid.Row>
 
 	  		<Grid.Row style={{ paddingLeft: '5em'}}> 
-	            <Card raised style={{borderRadius:'0'}}>
-	            	{
-	              		this.state.data.map(function(video){ 
-	              			return 
-	              			<div>
-	              				<Card.Header style={{ color: '#808080', textAlign:'left' }} content={video.title}></Card.Header>
-				      			<Card.Header style={{ color: '#808080', textAlign:'left' }} content={video.author}></Card.Header>
-	             	 		</div>
-	             	 	})
-	            	}
-	  		 	</Card>
+	  			{
+	              	this.state.history.map(function(history){ 
+	              		return 
+			            	<Card raised style={{borderRadius:'0'}}>
+			              			<Card.Content>
+			              				<Card.Header style={{ color: '#808080', textAlign:'left' }} content={history.messageFromServer.object.title}></Card.Header>
+						      			<Card.Header style={{ color: '#808080', textAlign:'left' }} content={history.author}></Card.Header>
+			             	 		</Card.Content>
+			             	</Card> 
+	             	})
+	            }
+	  		 	
 	  		 <Grid.Column width={5}>
 		        <Card raised style={{ borderRadius:'0'}}>
 				    <Embed
@@ -90,10 +112,10 @@ export default class UserSave extends Component {
 					    placeholder='https://static.pexels.com/photos/356844/pexels-photo-356844.jpeg'
 					    source='youtube'
 					  />
-				    {/*<Card.Content>
-				      <Card.Header style={{ color: '#808080', textAlign:'left' }} content={this.state.title}></Card.Header>
-				      <Card.Header style={{ color: '#808080', textAlign:'left' }} content={this.state.author}></Card.Header>
-				    </Card.Content>*/}
+				    <Card.Content>
+				      <Card.Header style={{ color: '#808080', textAlign:'left' }} content={this.state.data.title}></Card.Header>
+				      <Card.Header style={{ color: '#808080', textAlign:'left' }} content={this.state.data.title}></Card.Header>
+				    </Card.Content>
 	  			</Card>
 		      </Grid.Column>
 

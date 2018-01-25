@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Grid, Header } from 'semantic-ui-react'
 import ActiveSearch from '../ActiveSearch'
-import MapHeader from './MapHeader'
 
 
 const GridStyle = {
@@ -16,9 +15,6 @@ export default class SearchHome extends Component {
 		return (
 			<div>
 				<Grid style={GridStyle}>
-				{/*<Grid.Row>
-					<MapHeader />
-				</Grid.Row>*/}
 
 					<Grid.Row style={{padding:'0 1em', display:'block', width:'100%'}}>
 
@@ -37,7 +33,7 @@ export default class SearchHome extends Component {
 		  			
 
 		  			</Grid.Row>
-	  			<ActiveSearch/>	
+	  			
 	  			</Grid>
 	  			
   			</div>
