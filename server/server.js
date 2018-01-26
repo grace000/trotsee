@@ -25,7 +25,7 @@ const dotenv = require('dotenv').config();
 
 const uristring =
 
-process.env.MONGOLAB_URL ||
+process.env.MONGODB_URI ||
 'mongodb://localhost:27017/trotseeLocal';
 
 mongoose.connection.openUri(uristring, function (err, res) {
