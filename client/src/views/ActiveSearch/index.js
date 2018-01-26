@@ -1,4 +1,4 @@
-import { Button, Grid, Card } from 'semantic-ui-react'
+import { Button, Grid, Card, Embed } from 'semantic-ui-react'
 import React, { Component } from 'react'
 import axios from 'axios'
 import AddVideo from '../AddVideo'
@@ -49,17 +49,23 @@ export default class ActiveSearch extends Component {
     	<div>
     		<Grid>
 			{this.state.history.map((hist, index) => (
-				<Card>
+				<Card raised style={{borderRadius:'0', padding:'0.5em'}}>
+					<Embed
+				    id='O6Xo21L0ybE'
+				    placeholder='https://static.pexels.com/photos/356844/pexels-photo-356844.jpeg'
+				    source='youtube'
+					/>
     				<Card.Content>
     					<Card.Header>
-			        		<p>Hello, {hist.title} from {hist.author}!</p>
+			        		<p>{hist.title}</p>
+			        		<p>{hist.author}!</p>
 			        	</Card.Header>
     				</Card.Content>
     			</Card>
 			  ))}
 			 </Grid>		
     	</div>
-     
+
     );
   }
 }
