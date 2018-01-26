@@ -20,11 +20,11 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // app.use(bodyParser.json({limit: '50mb'}));
 // app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
 
-// const config = require('./config');
+const config = require('./Config');
 
 const uristring =
 
-// config ||
+config ||
 process.env.MONGOLAB_URL ||
 'mongodb://localhost:27017/trotseeLocal';
 
