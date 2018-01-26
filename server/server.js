@@ -20,7 +20,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // app.use(bodyParser.json({limit: '50mb'}));
 // app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
 
-const config = require('./Config');
+const config = require('./config');
 
 const uristring =
 
