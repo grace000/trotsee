@@ -49,7 +49,7 @@ export default class ActiveSearch extends Component {
     	<div>
     		<Grid>
 			{this.state.history.map((hist, index) => (
-				<Card raised style={{borderRadius:'0', padding:'0.5em'}}>
+				<Card raised style={{borderRadius:'0', margin: '0.5em 0.3em', width:'280px'}}>
 					<Embed
 				    id='O6Xo21L0ybE'
 				    placeholder='https://static.pexels.com/photos/356844/pexels-photo-356844.jpeg'

@@ -7,6 +7,7 @@ import {
   Grid,
 } from 'semantic-ui-react'
 import MainHeader from './MainHeader'
+import SearchHeader from './SearchHeader'
 import VideoPanel from './VideoPanel'
 import MapPanel from '../SearchHome/MapPanel'
 import Footer from './Footer'
@@ -21,7 +22,7 @@ export default class Layout extends Component{
 	        	<Row>
 
 	        		<MainHeader />
-
+	        		<SearchHeader />
         			<Grid columns={2} padded>
 				      <Grid.Column>
 				        <VideoPanel />

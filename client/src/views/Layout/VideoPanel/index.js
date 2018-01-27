@@ -9,8 +9,7 @@ import MapPanel from '../../SearchHome/MapPanel'
 
 const VideoPanelStyle = {
 	position:'relative',
-	overflow:'hidden',
-	right:'0'
+	right:'-11px'
 
 }
 
