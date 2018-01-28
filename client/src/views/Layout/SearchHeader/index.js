@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import styled from 'styled-components'
 import { Menu } from 'semantic-ui-react'
 import {
   BrowserRouter as Router,
@@ -10,28 +9,8 @@ import {
 
 import UserSave from '../../UserSave'
 import UserPost from '../../UserPost'
+import ActiveSearch from '../../ActiveSearch'
 
-
-const MenuStyle = {
-	minHeight: '100%',
-	backgroundColor:'#bbf0f0',
-	zIndex: '10',
-	position: 'fixed',
-	display: 'inline-block',
-	top: '0',
-	left:'0',
-	width: '15%'
-
-}
-
-const ContainerStyle = {
-	width:'85%',
-	left:'15%',
-	position:'relative',
-	overflow:'hidden',
-	right:'0'
-
-}
 
 const routes = [
   { path: '/userpost',
@@ -40,6 +19,9 @@ const routes = [
   },
   { path: '/usersave',
     main: () => <UserSave/>
+  },
+  { path: '/activesearch',
+    main: () => <ActiveSearch/>
   }
 ]
 
@@ -58,13 +40,18 @@ export default class LeftPanel extends Component{
     		<Router>
 
     		<div>
-    		
-    			<div>
+
+    			<div style={{overflow:'scroll', height:'100vh',width:'100%', overflowX:'hidden'}}>
 
 
 			      	<Menu pointing secondary>
 			        
 				        
+				        <Menu.Item name='trots' 
+				        		   active={activeItem === 'trots'} 
+				        		   onClick={this.handleItemClick}
+				        		   as={ Link } 
+				        		   to='/activesearch'/>
 				        <Menu.Item name='posted trots' 
 				        		   active={activeItem === 'posted trots'} 
 				        		   onClick={this.handleItemClick}
@@ -76,7 +63,7 @@ export default class LeftPanel extends Component{
 				        		   as={ Link } 
 				        		   to='/usersave'/>
 			      	</Menu>
-		     
+		     	   
 			       <div style={{ flex: 1}}>
 			   		
 			        {routes.map((route, index) => (
@@ -88,6 +75,7 @@ export default class LeftPanel extends Component{
 			          />
 	        		))}
 	      			</div>
+	 				
       			</div>
       		</div>
 		    </Router>

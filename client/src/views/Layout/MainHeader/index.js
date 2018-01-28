@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import styled from 'styled-components'
-import {
-  Icon,
-  Menu
-} from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 import {
   BrowserRouter as Router,
   Route,

@@ -1,7 +1,6 @@
-import { Button, Grid, Header, Icon, Image, Card, Embed, Input, Modal, Form } from 'semantic-ui-react'
+import { Button, Icon, Input, Modal, Form } from 'semantic-ui-react'
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
 const querystring = require('querystring');
 
 export default class AddVideo extends React.Component {
@@ -75,7 +74,7 @@ export default class AddVideo extends React.Component {
 	        <div>
 	      
 	        <Modal
-	          	trigger={<Button color="green" size="small"><Icon name="plus"/></Button>}
+	          	trigger={<Button color="teal" size="medium"><span><Icon name="plus" size='large'/></span></Button>}
 	            closeIcon>
 			
 				<Modal.Content>
@@ -98,7 +97,7 @@ export default class AddVideo extends React.Component {
 					      		 value={this.state.author}
 					      		 onChange={this.handleTextChange} />
 					    </Form.Field>
-					    <Button type='submit' value='Submit'>Submit</Button>
+					    <Button type='submit' value='Submit' >Submit</Button>
 					</Form>
 				</Modal.Content>
 	    	

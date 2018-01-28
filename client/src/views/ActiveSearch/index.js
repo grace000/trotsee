@@ -1,11 +1,10 @@
-import { Button, Grid, Card, Embed } from 'semantic-ui-react'
+import { Button, Grid, Card, Embed, Icon } from 'semantic-ui-react'
 import React, { Component } from 'react'
 import axios from 'axios'
 import AddVideo from '../AddVideo'
 
 const GridStyle = {
-	margin:'0',
-	float: 'right',
+	marginLeft:'0',
 	padding:'1em'
 }
 
@@ -47,7 +46,7 @@ export default class ActiveSearch extends Component {
     return (
 
     	<div>
-    		<Grid>
+    		<Grid style={GridStyle}>
 			{this.state.history.map((hist, index) => (
 				<Card raised style={{borderRadius:'0', margin: '0.5em 0.3em', width:'280px'}}>
 					<Embed
@@ -57,8 +56,17 @@ export default class ActiveSearch extends Component {
 					/>
     				<Card.Content>
     					<Card.Header>
-			        		<p>{hist.title}</p>
-			        		<p>{hist.author}!</p>
+    						<Grid>
+	    						<Grid.Row>
+		    						<Grid.Column width={12}>
+					        			<p>{hist.title}</p>
+					        			<p>{hist.author}!</p>
+					        		</Grid.Column>
+									<Grid.Column width={4}>
+					        			<Button><Icon color='teal' name='plus'/></Button>
+					        		</Grid.Column>
+				        		</Grid.Row>
+			        		</Grid>
 			        	</Card.Header>
     				</Card.Content>
     			</Card>
