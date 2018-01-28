@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-export default class Login extends Component {
+export default class SignUp extends Component {
  
 
   render() {
     return (
-    <div className='login-form'>
+    <div className='signup-form'>
    
     <style>{`
       body > div,
@@ -23,7 +23,7 @@ export default class Login extends Component {
     >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as='h2' color='teal' textAlign='center'>
-          Log-in to your account
+          Let's get started
         </Header>
         <Form size='large'>
           <Segment stacked>
@@ -31,7 +31,8 @@ export default class Login extends Component {
               fluid
               icon='user'
               iconPosition='left'
-              placeholder='E-mail address'
+              placeholder='Username'
+              type='string'
             />
             <Form.Input
               fluid
@@ -40,18 +41,39 @@ export default class Login extends Component {
               placeholder='Password'
               type='password'
             />
+            <Form.Input
+              fluid
+              icon='lock'
+              iconPosition='left'
+              placeholder='First Name'
+              type='string'
+            />
+            <Form.Input
+              fluid
+              icon='lock'
+              iconPosition='left'
+              placeholder='Last Name'
+              type='string'
+            />
+            <Form.Input
+              fluid
+              icon='lock'
+              iconPosition='left'
+              placeholder='E-mail Address'
+              type='string'
+            />
 
             <Button 
             	color='teal' 
             	fluid size='large'
             	as={Link}
             	to="/profile">
-            		Login
+            		Sign Up
             </Button>
           </Segment>
         </Form>
         <Message>
-          New to us? <a href='../SignUp'>Sign Up</a>
+          Already a member? <a href='../Login'>Login</a>
         </Message>
       </Grid.Column>
     </Grid>
