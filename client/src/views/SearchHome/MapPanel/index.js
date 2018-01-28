@@ -1,27 +1,10 @@
-import { Button, Grid, Header, Icon, Image, Divider, Sticky, Segment } from 'semantic-ui-react'
 import React, { Component } from 'react'
-
-
-
-const GridStyle = {
-	width:'100%',
-	float: 'right',
-	marginRight:'0',
-	paddingTop:'1em'
-	
-}
-
-const HeaderStyle = {
-	width: '100%',
-	float:'right',
-	height:'15em'
-}
 
 const Style = {
   zIndex: '10',
   position:'relative',
   overflow:'hidden',
-  
+  paddingBottom:'0'
 }
 
  export default class MapPanel extends Component {
@@ -34,7 +17,7 @@ const Style = {
     return (
       
         <div style={Style}>
-        	<iframe src={this.name} allowFullScreen style={{width:'100%', height:'60vw', frameBorder:'0', border:'0', paddingBottom:'1em'}}></iframe>
+        	<iframe src={this.name} allowFullScreen style={{width:'100%', height:'55vw', frameBorder:'0', border:'0', paddingBottom:'1em'}}></iframe>
         </div>
      
       

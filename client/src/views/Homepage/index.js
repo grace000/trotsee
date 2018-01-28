@@ -1,21 +1,14 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import styled from 'styled-components'
 import {
-  Button,
   Container,
   Divider,
   Grid,
-  Icon,
   Menu,
   Input,
   Header
 } from 'semantic-ui-react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const searchBoxStyle ={
   'webkitBoxShadow':'0px 3px 3px 0px rgba(0, 0, 0, 0.2)',  

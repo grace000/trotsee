@@ -29,13 +29,16 @@ const App = () => (
    
       <div>
         <Route exact path="/"                      render={renderHomepage} />
-        <Route exact path="/profile"               render={renderProfile } />
         <Route path="/login"                 render={renderLogin } />
-        <Route exact path="/activesearch"        render={renderActiveSearch} />
-        <Route exact path="/userpost"          render={renderUserPost} />
-        <Route exact path="/usersave"          render={renderUserSave} />
-        <Route exact path="/searchhome"            render={renderSearchHome} />
-         
+     
+    
+        <Route exact path="/profile"               render={renderProfile } />
+        <Route exact path="/activesearch"        render={renderProfile} />
+        <Route exact path="/userpost"          render={renderProfile} />
+        <Route exact path="/usersave"          render={renderProfile} />
+        <Route exact path="/searchhome"            render={renderProfile} />
+      
+
       </div>
 
   </Router>

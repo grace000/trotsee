@@ -1426,8 +1426,8 @@ mongodb@^3.0.1:
     mongodb-core "3.0.1"
 
 mongoose@^4.13.5:
-  version "4.13.9"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.9.tgz#ca4d99aed6e36e87854c2295387e7ea17966cfe3"
+  version "4.13.10"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.10.tgz#3fdf86fd04af5772d4f7183a68a096bfb886db88"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
@@ -1920,8 +1920,8 @@ regexp-clone@0.0.1:
   resolved "https://registry.yarnpkg.com/regexp-clone/-/regexp-clone-0.0.1.tgz#a7c2e09891fdbf38fbb10d376fb73003e68ac589"
 
 registry-auth-token@^3.0.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-3.3.1.tgz#fb0d3289ee0d9ada2cbb52af5dfe66cb070d3006"
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-3.3.2.tgz#851fd49038eecb586911115af845260eec983f20"
   dependencies:
     rc "^1.1.6"
     safe-buffer "^5.0.1"
