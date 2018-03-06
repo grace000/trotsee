@@ -4,7 +4,8 @@ import AddVideo from '../AddVideo'
 import axios from 'axios'
 
 const GridStyle = {
-	margin:'0'	
+	margin:'0',
+	padding:'1em'	
 }
 
 
@@ -70,7 +71,7 @@ export default class UserPost extends Component {
 
 	    <Grid style={GridStyle}>
 			{this.state.history.map((hist, index) => (
-				<Card raised style={{borderRadius:'0', margin: '0.5em 0.3em', width:'280px'}}>
+				<Card raised style={{borderRadius:'0', margin: '0.5em 0.3em', width:'250px'}}>
 					<Embed
 				    id='O6Xo21L0ybE'
 				    placeholder='https://static.pexels.com/photos/356844/pexels-photo-356844.jpeg'

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Checkbox, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Grid, Header, Image, Message, Segment, Modal } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 export default class SignUp extends Component {
@@ -16,6 +16,10 @@ export default class SignUp extends Component {
         height: 100%;
       }
     `}</style>
+    
+    <Modal
+              trigger={<p>Sign Up!</p>}
+              closeIcon>
     <Grid
       textAlign='center'
       style={{ height: '100%' }}
@@ -77,6 +81,7 @@ export default class SignUp extends Component {
         </Message>
       </Grid.Column>
     </Grid>
+    </Modal>
   </div>
 
 

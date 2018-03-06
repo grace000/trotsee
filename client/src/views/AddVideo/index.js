@@ -74,7 +74,7 @@ export default class AddVideo extends React.Component {
 	        <div>
 	      
 	        <Modal
-	          	trigger={<Button color="teal" size="medium"><span><Icon name="plus" size='large'/></span></Button>}
+	          	trigger={<Button basic color="black" size="medium" icon='plus' />}
 	            closeIcon>
 			
 				<Modal.Content>

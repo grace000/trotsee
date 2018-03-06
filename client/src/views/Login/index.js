@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message, Segment, Divider } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import SignUp from '../SignUp'
 
 export default class Login extends Component {
  
@@ -50,8 +51,9 @@ export default class Login extends Component {
             </Button>
           </Segment>
         </Form>
+        <Divider hidden />
         <Message>
-          New to us? <a href='../SignUp'>Sign Up</a>
+          New to us? <Link to='/'><SignUp /></Link>
         </Message>
       </Grid.Column>
     </Grid>

@@ -17,7 +17,6 @@ exports.list_all_users = function(req, res) {
       else {
         
         res.json(doc);
-        console.log("got the name");
         console.log(doc);
       }
     console.log("You visited the saved route!");

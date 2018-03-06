@@ -8,6 +8,10 @@ const GridStyle = {
 	padding:'1em'
 }
 
+const CardDescription = {
+	fontSize:'12px'
+}
+
 export default class ActiveSearch extends Component {
 
 	constructor(props) {
@@ -60,10 +64,10 @@ export default class ActiveSearch extends Component {
 	    						<Grid.Row>
 		    						<Grid.Column width={12}>
 					        			<p>{hist.title}</p>
-					        			<p>{hist.author}!</p>
+					        			<p style={CardDescription}>{hist.author}!</p>
 					        		</Grid.Column>
 									<Grid.Column width={4}>
-					        			<Button><Icon color='teal' name='plus'/></Button>
+					        			<Button icon='world' basic color='black' />
 					        		</Grid.Column>
 				        		</Grid.Row>
 			        		</Grid>
