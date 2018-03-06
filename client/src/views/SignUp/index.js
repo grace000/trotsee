@@ -18,7 +18,7 @@ export default class SignUp extends Component {
     `}</style>
     
     <Modal
-              trigger={<p>Sign Up!</p>}
+              trigger={<Button basic color='teal' content='Sign Up!' />}
               closeIcon>
     <Grid
       textAlign='center'

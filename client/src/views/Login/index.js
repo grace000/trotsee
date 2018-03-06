@@ -52,9 +52,7 @@ export default class Login extends Component {
           </Segment>
         </Form>
         <Divider hidden />
-        <Message>
-          New to us? <Link to='/'><SignUp /></Link>
-        </Message>
+        <SignUp />
       </Grid.Column>
     </Grid>
   </div>
